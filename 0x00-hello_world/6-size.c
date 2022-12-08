@@ -5,6 +5,7 @@
  *
  * Return: Always 0 (Success)
  */
+
 int msin(void)
 {
 	int a;
