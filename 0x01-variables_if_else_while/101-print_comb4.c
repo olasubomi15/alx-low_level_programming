@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <unistd.h>
+
 /**
  * main - Entry point
  * Descrption: prints two digits combination
  *
  * Return: Always 0 (success)
  */
-
 int main(void)
 {
 	int c, i;
@@ -15,15 +14,19 @@ int main(void)
 	{
 		for (i = '0'; i <= '9'; i++)
 		{
-			if (c < i)
+			for (k = '0'; k <= '9'; k++)
 			{
-				putchar(c);
-				putchar(i);
-
-				if (c != '8' || (c == '8' && i != '9'))
+				if (c < i && i < K)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(c);
+					putchar(i);
+					putchar(k);
+
+					if (c != '7')
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
