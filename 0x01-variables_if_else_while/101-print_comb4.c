@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- * Descrption: prints two digits combination
+ * main - Prints 3 combination of numbers
  *
- * Return: Always 0 (success)
+ * Return: Always (Success)
  */
 int main(void)
 {
-	int c, i;
+	int c, i, k;
 
 	for (c = '0'; c <= '9'; c++)
 	{
@@ -16,7 +15,7 @@ int main(void)
 		{
 			for (k = '0'; k <= '9'; k++)
 			{
-				if (c < i && i < K)
+				if (c < i && i < k)
 				{
 					putchar(c);
 					putchar(i);
