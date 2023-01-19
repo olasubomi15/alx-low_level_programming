@@ -1,12 +1,12 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- *  * print_opcodes - print the opcodes of this program
- *   * @a: address of the main function
- *    * @n: number of bytes to print
- *     *
- *      * Return: void
+ * main - prints its own opcodes
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
