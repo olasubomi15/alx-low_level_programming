@@ -3,16 +3,15 @@
 #include <stdio.h>
 
 /**
- *  * main - ...
- *   * @argc: ...
- *    * @argv: ...
- *     *
- *      * Return: ...
+ * main - ...
+ * @argc: ...
+ * @argv: ...
+ *
+ * Return: ...
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int index, source;
-	char *reg;
+	int (*oprt)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,24 +19,14 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	index = atoi(argv[1]);
-	reg = argv[2];
-	source = atoi(argv[3]);
+	oprt = get_op_func(argv[2]);
 
-	if (get_reg_func(reg) == NULL || reg[1] != '\0')
+	if (!oprt)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*reg == '/' && source == 0) ||
-			(*reg == '%' && source == 0))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
-	printf("%d\n", get_reg_func(reg)(index, source));
-
+	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
